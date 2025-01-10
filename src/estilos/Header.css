@@ -1,0 +1,23 @@
+.header{
+    width: 100vw;
+    height: 64px;
+    background-color: black;
+    padding: 5px;
+    position: fixed;
+    top: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logotipoTienda{
+    height: 60px;
+    width: 60px;
+    padding: 0;
+    margin: 0;
+}
+
+.boton-carrito{
+    background-color: #fff;
+}

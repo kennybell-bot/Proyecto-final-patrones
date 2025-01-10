@@ -1,0 +1,44 @@
+.tarjeta{
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    width: 1200px;
+    color: white;
+    margin: 5px;
+    border-radius: 10px;
+    flex-grow: 1;
+}
+
+img{
+    width: 25%;
+    height: 25%;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+}
+
+.seccionTexto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    padding: 10px;
+}
+
+h2{
+    font-family: Irish Grover;
+}
+
+p{
+    font-family: El Messiri;
+}
+
+.borde{
+    background: transparent;
+    transition: background 2s ease;;
+}
+
+.borde:hover{
+    background: linear-gradient(to right, #F81300, #FEE600);
+    border-radius: 10px;
+}
