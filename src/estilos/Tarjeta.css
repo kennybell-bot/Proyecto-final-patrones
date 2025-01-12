@@ -39,6 +39,6 @@ p{
 }
 
 .borde:hover{
-    background: linear-gradient(to right, #F81300, #FEE600);
+    background: linear-gradient(to right, #F81300, #fee600);
     border-radius: 10px;
 }

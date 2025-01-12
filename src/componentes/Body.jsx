@@ -1,6 +1,9 @@
 import React from "react";
 import '../estilos/Body.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Tarjeta from "./Tarjeta";
+import Carrusel from "./Carrusel";
 import andina from '../imagenes/andina.jpg';
 import amazonzas from '../imagenes/amazonas.jpg';
 import llanos from '../imagenes/llanos.jpg';
@@ -21,6 +24,10 @@ function Body(){
             <Tarjeta imagen={caribe} titulo={'Región Caribe'} descripcion={'La región Caribe de Colombia es una tierra vibrante y diversa, famosa por su rica herencia cultural y sus paisajes impresionantes. Enclavada a lo largo de la costa norte del país, esta región alberga ciudades icónicas como Cartagena, Santa Marta y Barranquilla, cada una con su propio encanto histórico y cultural. La artesanía caribeña refleja la fusión de tradiciones indígenas, africanas y españolas, dando lugar a creaciones únicas y coloridas. Desde tejidos y sombreros vueltiaos hasta joyería elaborada con conchas y corales, las artesanías del Caribe colombiano capturan la esencia y el espíritu de su gente y sus tradiciones.'}></Tarjeta>
 
             <Tarjeta imagen={pacifico} titulo={'Región pacífica'} descripcion={'La región Pacífica de Colombia es un tesoro natural y cultural, ubicada a lo largo de la costa del Océano Pacífico. Esta región se destaca por su exuberante biodiversidad, con selvas tropicales, manglares y una rica vida marina. Además, es un crisol de culturas, con una fuerte presencia de comunidades afrocolombianas e indígenas que han preservado sus tradiciones y artesanías únicas a lo largo de los siglos. Las artesanías del Pacífico Colombiano son una expresión de su identidad, combinando técnicas ancestrales con materiales naturales de la región, como fibras vegetales, madera y cerámica. Cada pieza artesanal cuenta una historia de resiliencia y conexión profunda con la naturaleza.'}></Tarjeta>
+
+            <h1>Nuestras tiendas</h1>
+
+            <Carrusel></Carrusel>
         </div>
     )
 }
