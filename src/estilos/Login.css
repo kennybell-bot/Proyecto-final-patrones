@@ -1,0 +1,43 @@
+.login{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../imagenes/4077186_17580.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form{
+    width: 500px;
+    height: 600px;
+    background-color: black;
+    color: white;
+    font-family: El Messiri;
+    font-size: 25px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 4px;
+}
+
+.borde{
+    background: linear-gradient(to right, #F81300, #fee600);
+    border-radius: 10px;
+}
+
+.input{
+    width: 350px;
+    height: 30px;
+    margin: 16px;
+    border-radius: 25px;
+}
+
+.input::nth-child(4){
+    border:3px solid #F81300;
+}

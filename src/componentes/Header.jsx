@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import '../estilos/Header.css';
 import Boton from '../componentes/Boton';
 import logotipo from '../imagenes/Artesanias.png';
@@ -8,12 +9,12 @@ function Header({counter}){
     return(
         <div className="header">
             <img src={logotipo} alt="Logotipo tienda" className='logotipoTienda'/>
-            <Boton>Inicio</Boton>
+            <Link to={"/Home"}><Boton>Inicio</Boton></Link>
             <Boton>Tiendas</Boton>
             <Boton>Catálogo</Boton>
-            <Boton>Ingresar</Boton>
+            <Link to="/Login"><Boton>Ingresar</Boton></Link>
             <Boton>Registrarse</Boton>
-            <Boton className="boton-carrito"><span>{counter}</span><FaShoppingCart /></Boton>
+            <Boton className="boton-carrito">{counter !== 0 && <span>{counter}</span>}<FaShoppingCart /></Boton>
         </div>
     )
 }
