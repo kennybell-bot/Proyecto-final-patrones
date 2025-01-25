@@ -26,7 +26,7 @@
     margin: 4px;
 }
 
-.borde{
+.borde-estatico{
     background: linear-gradient(to right, #F81300, #fee600);
     border-radius: 10px;
 }
@@ -36,8 +36,4 @@
     height: 30px;
     margin: 16px;
     border-radius: 25px;
-}
-
-.input::nth-child(4){
-    border:3px solid #F81300;
 }

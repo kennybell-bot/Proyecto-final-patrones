@@ -2,6 +2,7 @@ import React from "react";
 import '../estilos/Body.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import QuienesSomos from "./QuienesSomos";
 import Tarjeta from "./Tarjeta";
 import Carrusel from "./Carrusel";
 import andina from '../imagenes/andina.jpg';
@@ -25,8 +26,10 @@ function Body(){
 
             <Tarjeta imagen={pacifico} titulo={'Región pacífica'} descripcion={'La región Pacífica de Colombia es un tesoro natural y cultural, ubicada a lo largo de la costa del Océano Pacífico. Esta región se destaca por su exuberante biodiversidad, con selvas tropicales, manglares y una rica vida marina. Además, es un crisol de culturas, con una fuerte presencia de comunidades afrocolombianas e indígenas que han preservado sus tradiciones y artesanías únicas a lo largo de los siglos. Las artesanías del Pacífico Colombiano son una expresión de su identidad, combinando técnicas ancestrales con materiales naturales de la región, como fibras vegetales, madera y cerámica. Cada pieza artesanal cuenta una historia de resiliencia y conexión profunda con la naturaleza.'}></Tarjeta>
 
-            <h1>Nuestras tiendas</h1>
+            <h1>¿Quiénes Somos?</h1>
+            <QuienesSomos></QuienesSomos>
 
+            <h1>Nuestras tiendas</h1>
             <Carrusel></Carrusel>
         </div>
     )

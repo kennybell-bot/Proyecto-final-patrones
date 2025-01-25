@@ -5,7 +5,7 @@ import logotipo from '../imagenes/Artesanias.png';
 function Login(){
     return(
         <div className="login">
-            <div className="borde">
+            <div className="borde-estatico">
                 <div className="login-form">
                     <img src={logotipo} alt="Logotipo tienda" className='logotipoLogin'/>
                     <h1>Bienvenido</h1>
