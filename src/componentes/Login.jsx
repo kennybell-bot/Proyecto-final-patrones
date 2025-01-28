@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 import '../estilos/Login.css';
 import logotipo from '../imagenes/Artesanias.png';
 import { useState } from "react";
@@ -8,6 +9,7 @@ import { useEffect } from "react";
 function Login() {
     const [usuario, setUsuario] = useState('');
     const [contrasena, setContrasena] = useState('');
+    const navigate = useNavigate();
 
     const handleLogin = () => {
         let data = JSON.stringify({
@@ -27,7 +29,20 @@ function Login() {
 
         axios.request(config)
         .then((response) => {
-            console.log(response.data);
+            const idusuario = response.data.idusuario;
+            if (idusuario) {
+                // Redirige a una página específica basada en el idusuario
+                if (idusuario === 3) {
+                    navigate('/administradorGeneral');
+                } else if (idusuario === 1) {
+                    navigate('/Catalogo');
+                } else {
+                    navigate('/Login');
+                }
+            } else {
+                // Maneja el error de autenticación
+                console.log('Error de autenticación');
+            }
         })
         .catch((error) => {
             console.log(error);

@@ -1,0 +1,8 @@
+.administradorGeneral{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-image: url(../imagenes/4077186_17580.jpg);
+    margin-top: 65px;
+}

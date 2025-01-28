@@ -10,10 +10,10 @@
     background-color: #000000;
     color: #fff;
     padding: 5px;
-    border: 3px solid transparent;
-    background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)),linear-gradient(to left, #F81300, #fee600);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
+    border: 3px solid #F81300;
+    margin: auto;
+    margin-top: 50px;
+
 }
 
 .imagenProducto{

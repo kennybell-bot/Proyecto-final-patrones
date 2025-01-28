@@ -5,6 +5,7 @@ import Header from './componentes/Header';
 import Body from './componentes/Body';
 import Login from './componentes/Login';
 import Catalogo from './componentes/Catalogo';
+import AdministradorGeneral from './componentes/AdministradorGeneral';
 
 
 var productCounter = 12;
@@ -20,6 +21,7 @@ function App() {
           <Route path='/home' element={<Body/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/catalogo" element={<Catalogo/>}/>
+          <Route path="/administradorGeneral" element={<AdministradorGeneral/>}/>
         </Routes>
       </div>
     </BrowserRouter>

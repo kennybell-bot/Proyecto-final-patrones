@@ -11,6 +11,8 @@
     color: white;
     transition: border 0.5s, box-shadow 0.5s;
     box-shadow: 0px 0px 0px white;
+    margin: auto;
+    margin-top: 50px;
 }
 
 .tarjeta-tienda:hover{

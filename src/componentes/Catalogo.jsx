@@ -4,6 +4,7 @@ import '../estilos/Catalogo.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '../estilos/Carrusel.css';
+import Slider from "react-slick";
 import CarruselProductos from "./CarruselProductos";
 import imagenEjemplo from '../imagenes/imagenEjemploProducto.jpg';
 import TarjetaProducto from "./TarjetaProducto";
