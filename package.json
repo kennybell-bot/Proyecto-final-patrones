@@ -3,7 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "assert": "^2.1.0",
+    "axios": "^1.7.9",
+    "browserify-zlib": "^0.2.0",
+    "buffer": "^6.0.3",
     "cra-template": "1.2.0",
+    "crypto-browserify": "^3.12.1",
+    "https-browserify": "^1.0.0",
+    "querystring-es3": "^0.2.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-icons": "^5.4.0",
@@ -12,6 +19,11 @@
     "react-scripts": "5.0.1",
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "unirest": "^0.6.0",
+    "url": "^0.11.4",
+    "util": "^0.12.5",
     "web-vitals": "^4.2.4"
   },
   "scripts": {

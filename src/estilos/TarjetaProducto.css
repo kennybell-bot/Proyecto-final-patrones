@@ -1,0 +1,28 @@
+.tarjetaProducto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 400px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #000000;
+    color: #fff;
+    padding: 5px;
+    border: 3px solid transparent;
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)),linear-gradient(to left, #F81300, #fee600);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.imagenProducto{
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.botonComprar{
+    background-color: #F81300;
+}

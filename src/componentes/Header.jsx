@@ -11,7 +11,7 @@ function Header({counter}){
             <img src={logotipo} alt="Logotipo tienda" className='logotipoTienda'/>
             <Link to={"/Home"}><Boton>Inicio</Boton></Link>
             <Boton>Tiendas</Boton>
-            <Boton>Catálogo</Boton>
+            <Link to="/Catalogo"><Boton>Catálogo</Boton></Link>
             <Link to="/Login"><Boton>Ingresar</Boton></Link>
             <Boton>Registrarse</Boton>
             <Boton className="boton-carrito">{counter !== 0 && <span>{counter}</span>}<FaShoppingCart /></Boton>
