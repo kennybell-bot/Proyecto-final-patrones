@@ -4,14 +4,13 @@ import '../estilos/Catalogo.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '../estilos/Carrusel.css';
-import Slider from "react-slick";
 import CarruselProductos from "./CarruselProductos";
 import imagenEjemplo from '../imagenes/imagenEjemploProducto.jpg';
 import TarjetaProducto from "./TarjetaProducto";
 import { useEffect } from "react";
 import { useState } from "react";
-import axios from 'axios';
 
+/**/
 const Catalogo = () => {
 
 const [productos, setProductos] = useState([]);
@@ -30,10 +29,12 @@ const [productos, setProductos] = useState([]);
         <div className="cuerpoCatalogo">
             <Header />
             <h1>Catálogo de productos</h1>
+
             <CarruselProductos>
                 {productos.map((producto) => (
                     <TarjetaProducto
                         key={producto.idproducto}
+                        id = {producto.idproducto}
                         imagen={imagenEjemplo}
                         nombre={producto.nombreproducto}
                         descripcion={'descripcion'}

@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import '../estilos/Login.css';
 import logotipo from '../imagenes/Artesanias.png';
 import { useState } from "react";
-import { useEffect } from "react";
 
 function Login() {
     const [usuario, setUsuario] = useState('');
@@ -31,6 +30,9 @@ function Login() {
         .then((response) => {
             const idusuario = response.data.idusuario;
             if (idusuario) {
+                // Guarda los datos del usuario en sessionStorage
+                sessionStorage.setItem('usuario', JSON.stringify(response.data));
+
                 // Redirige a una página específica basada en el idusuario
                 if (idusuario === 3) {
                     navigate('/administradorGeneral');
@@ -83,3 +85,15 @@ function Login() {
 }
 
 export default Login;
+
+/*
+Para recuperar los datos del usuario almacenados en sessionStorage, se puede utilizar el siguiente código:
+const [usuario, setUsuario] = useState(null);
+
+    useEffect(() => {
+        const usuarioData = sessionStorage.getItem('usuario');
+        if (usuarioData) {
+            setUsuario(JSON.parse(usuarioData));
+        }
+    }, []);
+*/
