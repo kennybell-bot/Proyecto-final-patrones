@@ -1,17 +1,16 @@
 import React from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
-import Boton from "./Boton";
 import "../estilos/ProductoEnCarrito.css";
 
 function ProductoEnCarrito({id, iamgen, nombre, precio}) {
     return (
         <div className="productoEnCarrito">
             <img src={iamgen} alt="Imagen del producto" />
-            <h3>{nombre}</h3>
+            <h2>{nombre}</h2>
             <p>{precio}</p>
-            <Boton>
-                <FaRegTrashAlt />
-            </Boton>
+                <button className="botonEliminar">
+                    <FaRegTrashAlt />
+                </button>
         </div>
     );
 }

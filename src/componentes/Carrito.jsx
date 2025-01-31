@@ -1,26 +1,55 @@
-import React from "react";
-import Boton from "./Boton";
-import ProductoEnCarrito from "./ProductoEnCarrito";
-import iamgenProcucto from "../imagenes/imagenEjemploProducto.jpg";
+import React, { useEffect, useState } from "react";
+import imagenProcucto from "../imagenes/imagenEjemploProducto.jpg";
 import "../estilos/CarritoDeCompras.css";
+import ProductoEnCarrito from "./ProductoEnCarrito";
 
 function Carrito() {
+    const [productos, setProductos] = useState([]);
+    const [productosEnCarrito, setProductosEnCarrito] = useState([]);
+    const [total, setTotal] = useState(0); // Estado para almacenar el total
 
-    let precio = 'El chiquito';
+    // Primer useEffect para obtener productos
+    useEffect(() => {
+        fetch('https://backend-vercel-lime.vercel.app/producto/consultar2')
+            .then(response => response.json())
+            .then(data => setProductos(data.productos))
+            .catch(error => {
+                console.log('Salio mal');
+                console.log(error);
+            });
+    }, []);
+
+    // Segundo useEffect para filtrar productos
+// Tercer useEffect para calcular el total
+useEffect(() => {
+    const totalCalculado = productosEnCarrito.reduce((sum, producto) => sum + Number(producto.precio), 0);
+    setTotal(totalCalculado);
+}, [productosEnCarrito]);
+
+    // Tercer useEffect para calcular el total
+    useEffect(() => {
+        const totalCalculado = productosEnCarrito.reduce((sum, producto) => sum + producto.precio, 0);
+        setTotal(totalCalculado);
+    }, [productosEnCarrito]);
 
     return (
         <div className="carritoDeCompras">
             <h1>Carrito de Compras</h1>
             <div className="seccionProductosCarrito">
-                <ProductoEnCarrito iamgen={iamgenProcucto} nombre='Consolador xl' precio={'El chiquito'}></ProductoEnCarrito>
-                <ProductoEnCarrito iamgen={iamgenProcucto} nombre='Consolador xl' precio={'El chiquito'}></ProductoEnCarrito>
-                <ProductoEnCarrito iamgen={iamgenProcucto} nombre='Consolador xl' precio={'El chiquito'}></ProductoEnCarrito>
+                {productosEnCarrito.map(producto => (
+                    <ProductoEnCarrito
+                        key={producto.idproducto}
+                        iamgen={imagenProcucto}
+                        nombre={producto.nombreproducto}
+                        precio={producto.precio}
+                    />
+                ))}
             </div>
             <div className="seccionTotal">
                 <h2>Total</h2>
-                <p>{precio}</p>
+                <p>${total.toFixed(2)}</p> 
+
             </div>
-            <Boton className='botonPagar'>Pagar</Boton>
         </div>
     );
 }

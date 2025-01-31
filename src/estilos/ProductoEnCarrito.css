@@ -1,5 +1,26 @@
 .productoEnCarrito{
     background-color: #000;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    color: white;
+    width: 300px;
+    height: 350px;
+    border: 5px solid transparent;
+    border-radius: 8px;
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)),linear-gradient(to right, #F81300, #fee600);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    margin: 20px;
 }
+
+.botonEliminar{
+    padding: 6px;
+}
+
+.botonEliminar:hover{
+    background-color: #F81300;
+    color: white;
+}
+

@@ -4,17 +4,14 @@ import '../estilos/Catalogo.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '../estilos/Carrusel.css';
-import CarruselProductos from "./CarruselProductos";
-import imagenEjemplo from '../imagenes/imagenEjemploProducto.jpg';
-import TarjetaProducto from "./TarjetaProducto";
-import axios from 'axios';
+
 
 const Catalogo = () => {
     const [productos, setProductos] = useState([]);
 
     useEffect(() => {
         // Fetch de datos directamente como un array
-        axios.get('https://backend-vercel-lime.vercel.app/producto/consultar2')
+        fetch('https://backend-vercel-lime.vercel.app/producto/consultar2')
             .then(response => {
                 if (Array.isArray(response.data)) {
                     setProductos(response.data); // Guardar directamente el array
