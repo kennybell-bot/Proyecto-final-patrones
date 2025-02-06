@@ -1,6 +1,6 @@
 import react from 'react';
-import logotipo from '../imagenes/Artesanias.png';
-import '../estilos/QuienesSomos.css';
+import logotipo from '../../imagenes/Artesanias.png';
+import '../../estilos/QuienesSomos.css';
 
 function QuienesSomos() {
     return (

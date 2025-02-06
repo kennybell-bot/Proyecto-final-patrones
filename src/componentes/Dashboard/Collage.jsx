@@ -1,14 +1,14 @@
-import '../estilos/Collage.css';
-import img1 from '../imagenes/Collage/imagenCollage1.jpg';
-import img2 from '../imagenes/Collage/imagenCollage2.jpg';
-import img3 from '../imagenes/Collage/imagenCollage3.jpg';
-import img4 from '../imagenes/Collage/imagenCollage4.jpg';
-import img5 from '../imagenes/Collage/imagenCollage5.jpg';
-import img6 from '../imagenes/Collage/imagenCollage6.jpg';
-import img7 from '../imagenes/Collage/imagenCollage7.jpg';
-import img8 from '../imagenes/Collage/imagenCollage8.jpg';
-import img9 from '../imagenes/Collage/imagenCollage9.jpg';
-import img10 from '../imagenes/Collage/imagenCollage10.jpg';  
+import '../../estilos/Collage.css';
+import img1 from '../../imagenes/Collage/imagenCollage1.jpg';
+import img2 from '../../imagenes/Collage/imagenCollage2.jpg';
+import img3 from '../../imagenes/Collage/imagenCollage3.jpg';
+import img4 from '../../imagenes/Collage/imagenCollage4.jpg';
+import img5 from '../../imagenes/Collage/imagenCollage5.jpg';
+import img6 from '../../imagenes/Collage/imagenCollage6.jpg';
+import img7 from '../../imagenes/Collage/imagenCollage7.jpg';
+import img8 from '../../imagenes/Collage/imagenCollage8.jpg';
+import img9 from '../../imagenes/Collage/imagenCollage9.jpg';
+import img10 from '../../imagenes/Collage/imagenCollage10.jpg';  
 
 
 function Collage() {

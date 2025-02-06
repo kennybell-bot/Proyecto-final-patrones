@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import imagenProcucto from "../imagenes/imagenEjemploProducto.jpg";
-import "../estilos/CarritoDeCompras.css";
+import imagenProcucto from "../../imagenes/imagenEjemploProducto.jpg";
+import "../../estilos/CarritoDeCompras.css";
 import ProductoEnCarrito from "./ProductoEnCarrito";
 
 function Carrito() {

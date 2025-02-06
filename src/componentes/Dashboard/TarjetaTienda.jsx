@@ -1,5 +1,5 @@
 import React from "react";
-import '../estilos/TarjetaTienda.css';
+import '../../estilos/TarjetaTienda.css';
 
 function TarjetaTienda({imagen, nombre, ubicacion}){
     return(

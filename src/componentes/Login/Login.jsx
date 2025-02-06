@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
-import '../estilos/Login.css';
-import logotipo from '../imagenes/Artesanias.png';
+import '../../estilos/Login.css';
+import logotipo from '../../imagenes/Artesanias.png';
 import { useState } from "react";
 
 function Login() {
@@ -28,7 +28,7 @@ function Login() {
 
         axios.request(config)
         .then((response) => {
-            const idusuario = response.data.idusuario;
+            const idusuario = response.data.idrol;
             if (idusuario) {
                 // Guarda los datos del usuario en sessionStorage
                 sessionStorage.setItem('usuario', JSON.stringify(response.data));

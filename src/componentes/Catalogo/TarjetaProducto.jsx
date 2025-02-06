@@ -1,5 +1,5 @@
 import React from "react";
-import '../estilos/TarjetaProducto.css';
+import '../../estilos/TarjetaProducto.css';
 
 function TarjetaProducto({id, imagen, nombre , descripcion, precio}) {
     const handleComprar = () => {

@@ -1,16 +1,16 @@
 import React from "react";
-import '../estilos/Body.css';
+import '../../estilos/Body.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import QuienesSomos from "./QuienesSomos";
 import Tarjeta from "./Tarjeta";
 import Carrusel from "./Carrusel";
 import Collage from "./Collage";
-import andina from '../imagenes/andina.jpg';
-import amazonzas from '../imagenes/amazonas.jpg';
-import llanos from '../imagenes/llanos.jpg';
-import caribe from '../imagenes/caribe.jpg';
-import pacifico from '../imagenes/Pacifico.jpg';
+import andina from '../../imagenes/andina.jpg';
+import amazonzas from '../../imagenes/amazonas.jpg';
+import llanos from '../../imagenes/llanos.jpg';
+import caribe from '../../imagenes/caribe.jpg';
+import pacifico from '../../imagenes/Pacifico.jpg';
 
 function Body(){
     return(

@@ -1,6 +1,6 @@
 import React from "react";
 import { FaRegTrashAlt } from "react-icons/fa";
-import "../estilos/ProductoEnCarrito.css";
+import "../../estilos/ProductoEnCarrito.css";
 
 function ProductoEnCarrito({id, iamgen, nombre, precio}) {
     return (

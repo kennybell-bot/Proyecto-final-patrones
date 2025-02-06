@@ -1,13 +1,13 @@
 import React from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import '../estilos/Carrusel.css';
+import '../../estilos/Carrusel.css';
 import Slider from "react-slick";
 import TarjetaTienda from "./TarjetaTienda";
-import bogota from '../imagenes/Tiendas/Bogota.jpg';
-import quibdo from '../imagenes/Tiendas/Quibdo.jpg';
-import barranquilla from '../imagenes/Tiendas/Barranquilla.jpg';
-import medellin from '../imagenes/Tiendas/Medellin.jpg';
+import bogota from '../../imagenes/Tiendas/Bogota.jpg';
+import quibdo from '../../imagenes/Tiendas/Quibdo.jpg';
+import barranquilla from '../../imagenes/Tiendas/Barranquilla.jpg';
+import medellin from '../../imagenes/Tiendas/Medellin.jpg';
 
 
 function Carrusel() {

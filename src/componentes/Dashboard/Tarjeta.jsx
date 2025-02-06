@@ -1,5 +1,5 @@
 import React from "react";
-import '../estilos/Tarjeta.css';
+import '../../estilos/Tarjeta.css';
 
 function Tarjeta({imagen, titulo, descripcion}){
 

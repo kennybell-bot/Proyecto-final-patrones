@@ -1,11 +1,11 @@
 import React from "react";
-import Header from "./Header";
-import '../estilos/Catalogo.css';
+import Header from "../Header";
+import '../../estilos/Catalogo.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import '../estilos/Carrusel.css';
+import '../../estilos/Carrusel.css';
 import CarruselProductos from "./CarruselProductos";
-import imagenEjemplo from '../imagenes/imagenEjemploProducto.jpg';
+import imagenEjemplo from '../../imagenes/imagenEjemploProducto.jpg';
 import TarjetaProducto from "./TarjetaProducto";
 import { useEffect } from "react";
 import { useState } from "react";
