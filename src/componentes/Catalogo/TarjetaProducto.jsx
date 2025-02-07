@@ -34,4 +34,5 @@ function TarjetaProducto({id, imagen, nombre , descripcion, precio}) {
     );
 }
 
-export default TarjetaProducto;
+export default TarjetaProducto;  
+
