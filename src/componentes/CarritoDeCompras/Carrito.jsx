@@ -40,6 +40,13 @@ function Carrito() {
         setTotal(totalCalculado);
     }, [productosEnCarrito]);
 
+    // Función para eliminar producto del carrito
+    const eliminarProducto = (id) => {
+        const nuevosProductosEnCarrito = productosEnCarrito.filter(producto => producto.idproducto !== id);
+        setProductosEnCarrito(nuevosProductosEnCarrito);
+        sessionStorage.setItem('productos', JSON.stringify(nuevosProductosEnCarrito.map(producto => producto.idproducto)));
+    };
+
     return (
         <div className="carritoDeCompras">
             <h1>Carrito de Compras</h1>
@@ -47,9 +54,11 @@ function Carrito() {
                 {productosEnCarrito.map(producto => (
                     <ProductoEnCarrito
                         key={producto.idproducto}
+                        id={producto.idproducto}
                         iamgen={producto.image || imagenProcucto}
                         nombre={producto.nombreproducto}
                         precio={producto.ultimoprecio}
+                        onEliminar={eliminarProducto} // Pasar la función como prop
                     />
                 ))}
             </div>
