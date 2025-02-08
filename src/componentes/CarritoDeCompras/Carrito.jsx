@@ -14,21 +14,25 @@ function Carrito() {
             .then(response => response.json())
             .then(data => setProductos(data.productos))
             .catch(error => {
-                console.log('Salio mal');
-                console.log(error);
+                console.log('Error al obtener productos:', error);
             });
     }, []);
 
     // Segundo useEffect para filtrar productos
-// Tercer useEffect para calcular el total
-useEffect(() => {
-    const totalCalculado = productosEnCarrito.reduce((sum, producto) => sum + Number(producto.precio), 0);
-    setTotal(totalCalculado);
-}, [productosEnCarrito]);
+    useEffect(() => {
+        const productosEnSession = sessionStorage.getItem('productos');
+        if (productosEnSession && productos.length > 0) {
+            const idsEnCarrito = JSON.parse(productosEnSession);
+            const productosFiltrados = productos.filter(producto => 
+                idsEnCarrito.includes(producto.idproducto)
+            );
+            setProductosEnCarrito(productosFiltrados);
+        }
+    }, [productos]);
 
     // Tercer useEffect para calcular el total
     useEffect(() => {
-        const totalCalculado = productosEnCarrito.reduce((sum, producto) => sum + producto.precio, 0);
+        const totalCalculado = productosEnCarrito.reduce((sum, producto) => sum + Number(producto.precio), 0);
         setTotal(totalCalculado);
     }, [productosEnCarrito]);
 
@@ -39,7 +43,7 @@ useEffect(() => {
                 {productosEnCarrito.map(producto => (
                     <ProductoEnCarrito
                         key={producto.idproducto}
-                        iamgen={imagenProcucto}
+                        iamgen={producto.image}
                         nombre={producto.nombreproducto}
                         precio={producto.precio}
                     />
@@ -48,7 +52,6 @@ useEffect(() => {
             <div className="seccionTotal">
                 <h2>Total</h2>
                 <p>${total.toFixed(2)}</p> 
-
             </div>
         </div>
     );

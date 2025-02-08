@@ -78,6 +78,7 @@ function Login() {
                         onChange={(e) => setContrasena(e.target.value)} 
                     />
                     <button onClick={handleLogin} className="botonLogin">Iniciar Sesión</button>
+                    <a href="https://angie-front-seven.vercel.app/store/home">¿Eres administrador?</a>
                 </div>
             </div>
         </div>
