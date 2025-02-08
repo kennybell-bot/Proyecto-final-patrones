@@ -32,7 +32,11 @@ function Carrito() {
 
     // Tercer useEffect para calcular el total
     useEffect(() => {
-        const totalCalculado = productosEnCarrito.reduce((sum, producto) => sum + Number(producto.precio), 0);
+        const totalCalculado = productosEnCarrito.reduce((sum, producto) => {
+            const precio = Number(producto.ultimoprecio.replace('$', ''));
+            return sum + (isNaN(precio) ? 0 : precio);
+        }, 0);
+        console.log("totalCalculado");
         setTotal(totalCalculado);
     }, [productosEnCarrito]);
 
@@ -43,9 +47,9 @@ function Carrito() {
                 {productosEnCarrito.map(producto => (
                     <ProductoEnCarrito
                         key={producto.idproducto}
-                        iamgen={producto.image}
+                        iamgen={producto.image || imagenProcucto}
                         nombre={producto.nombreproducto}
-                        precio={producto.precio}
+                        precio={producto.ultimoprecio}
                     />
                 ))}
             </div>
