@@ -53,9 +53,11 @@ function Carrito() {
         const productosEnSession = JSON.parse(sessionStorage.getItem('productos'));
         const carrito = productosEnCarrito.map(producto => {
             const quantity = productosEnSession.filter(id => id === producto.idproducto).length;
+            const precio = Number(producto.ultimoprecio.replace('$', ''));
+            console.log('Precio:', precio);
             return {
                 name: producto.nombreproducto,
-                price: Number(producto.ultimoprecio.replace('$', '')),
+                price: precio,
                 quantity: quantity
             };
         });
@@ -64,19 +66,23 @@ function Carrito() {
 
         const data = {
             usuario: {
-                id: usuario.id,
-                nombre: usuario.nombre
+                id: usuario.idusuario,
+                nombre: usuario.usuario,
+                correo: usuario.correo
             },
             carrito: carrito,
-            success_url: "http://localhost:3000/success",
-            cancel_url: "http://localhost:3000/cancel"
+            success_url: "http://localhost:3000/Home",
+            cancel_url: "http://localhost:3000/Catalogo"
         };
+
+        console.log(usuario.id);
+        console.log(usuario.correo);
 
         axios.post('https://backend-vercel-delta.vercel.app/crear-pago', data)
             .then(response => {
                 console.log('Compra realizada con éxito!', response.data);
                 // Redirigir a la URL de éxito
-                window.location.href = response.data.success_url;
+                window.location.href = response.data.url;
             })
             .catch(error => {
                 console.log('Error al realizar la compra', error);

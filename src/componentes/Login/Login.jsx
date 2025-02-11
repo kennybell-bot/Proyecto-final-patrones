@@ -31,11 +31,13 @@ function Login() {
         .then((response) => {
             const idusuario = response.data.idrol;
             const nombreUsuario = response.data.nombre; // Suponiendo que el nombre del usuario viene en la respuesta
+            //const idUsuario = response.data.id; // Suponiendo que el id del usuario viene en la respuesta
             if (idusuario) {
                 // Guarda los datos del usuario en sessionStorage
                 sessionStorage.setItem('usuario', JSON.stringify(response.data));
-                sessionStorage.setItem('nombreUsuario', usuario); // Guarda el nombre del usuario en sessionStorage
-
+                sessionStorage.setItem('nombreUsuario', response.data.usuario); // Guarda el nombre del usuario en sessionStorage
+                sessionStorage.setItem('idUsuario', response.data.idusuario); // Guarda el id del usuario en sessionStorage
+                sessionStorage.setItem('correo', response.data.correo);
                 // Redirige a una página específica basada en el idusuario
                 if (idusuario === 3) {
                     window.location.href = 'https://angie-front-seven.vercel.app/';
