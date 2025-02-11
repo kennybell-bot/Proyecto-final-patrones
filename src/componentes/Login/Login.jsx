@@ -2,8 +2,8 @@ import React from "react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 import '../../estilos/Login.css';
-import logotipo from '../../imagenes/Artesanias.png';
 import { useState } from "react";
+import { GiColumnVase } from "react-icons/gi";
 
 function Login() {
     const [usuario, setUsuario] = useState('');
@@ -66,8 +66,8 @@ function Login() {
         <div className="login">
             <div className="borde-estatico">
                 <div className="login-form">
-                    <img src={logotipo} alt="Logotipo tienda" className='logotipoLogin'/>
                     <h1>Bienvenido</h1>
+                    <GiColumnVase className='logotipoLogin'/>
                     <label htmlFor="usuario">
                         Usuario
                     </label>

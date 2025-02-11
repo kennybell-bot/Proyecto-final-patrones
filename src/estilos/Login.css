@@ -37,3 +37,10 @@
     margin: 16px;
     border-radius: 25px;
 }
+
+.logotipoLogin{
+    width: 90px;
+    height: 90px;
+    margin-bottom: 20px;
+    color: #fee600;
+}

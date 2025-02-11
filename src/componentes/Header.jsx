@@ -4,6 +4,7 @@ import '../estilos/Header.css';
 import Boton from '../componentes/Boton';
 import logotipo from '../imagenes/Artesanias.png';
 import { FaShoppingCart } from "react-icons/fa";
+import { GiColumnVase } from "react-icons/gi";
 
 
 function Header() {
@@ -18,7 +19,7 @@ function Header() {
 
     return (
         <div className="header">
-            <img src={logotipo} alt="Logotipo tienda" className='logotipoTienda' />
+            <GiColumnVase className="logotipoTienda"/>
             <Link to={"/Home"}><Boton>Inicio</Boton></Link>
             <Boton>Tiendas</Boton>
             <Link to="/Catalogo"><Boton>Catálogo</Boton></Link>

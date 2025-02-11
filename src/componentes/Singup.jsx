@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import '../estilos/Singup.css';
 import Modal from './Modal';
+import { GiColumnVase } from "react-icons/gi";
 
 const Signup = () => {
     const [nombre, setNombre] = useState('');
@@ -35,11 +36,16 @@ const Signup = () => {
 
     return (
         <div className="signup-container">
-            <h1>Bienvenido</h1>
-            <h2>Nos alegra que seas parte de nosotros</h2>
+
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label htmlFor="nombre">Nombre</label>
+
+                    <h1>Bienvenido</h1>
+                    <GiColumnVase className='logoTipo'/>
+                    <p>Nos alegra que seas parte de nosotros</p>
+                    <div>
+                        <label htmlFor="nombre">Nombre</label>
+                    </div>
                     <input
                         type="text"
                         id="nombre"
@@ -49,7 +55,9 @@ const Signup = () => {
                     />
                 </div> 
                 <div className="form-group">
-                    <label htmlFor="email">Email</label>
+                    <div>
+                        <label htmlFor="email">Email</label>
+                    </div>
                     <input
                         type="email"
                         id="email"
@@ -59,7 +67,9 @@ const Signup = () => {
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="direccion">Dirección de Residencia</label>
+                    <div>
+                        <label htmlFor="direccion">Dirección de Residencia</label>
+                    </div>
                     <input
                         type="text"
                         id="direccion"
@@ -69,7 +79,9 @@ const Signup = () => {
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="contrasena">Contraseña</label>
+                    <div>
+                        <label htmlFor="contrasena">Contraseña</label>
+                    </div>
                     <input
                         type="password"
                         id="contrasena"
