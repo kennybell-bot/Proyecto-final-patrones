@@ -6,7 +6,7 @@ import { GiColumnVase } from "react-icons/gi";
 
 const Signup = () => {
     const [nombre, setNombre] = useState('');
-    const [email, setEmail] = useState('');
+    const [correo, setCorreo] = useState('');
     const [direccion, setDireccion] = useState('');
     const [contrasena, setContrasena] = useState('');
     const [mensaje, setMensaje] = useState('');
@@ -16,30 +16,36 @@ const Signup = () => {
         e.preventDefault();
         // Guardar el nombre del usuario en sessionStorage
         sessionStorage.setItem('nombreUsuario', nombre);
-        setIsModalOpen(true);
-    };
 
-    const handleVerify = async (codigo) => {
         try {
-            const response = await axios.post('https://backend-vercel-lime.vercel.app/registrar/cliente', {
-                nombre,
-                email,
-                direccion,
-                contrasena,
-                codigo
+            const response = await axios.post('https://back-artesanias-vue.vercel.app/Registrar/Cliente', {
+                usuario: nombre,
+                contrasena: contrasena,
+                correo: correo
             });
             setMensaje('Registro exitoso');
+            setIsModalOpen(true);
         } catch (error) {
             setMensaje('Error en el registro');
         }
     };
 
+    const handleVerify = async (codigo) => {
+        try {
+            const response = await axios.put('https://back-artesanias-vue.vercel.app/Registrar/Cliente/Activar', {
+                usuario: nombre,
+                codigoActivacion: codigo
+            });
+            setMensaje('Verificación exitosa');
+        } catch (error) {
+            setMensaje('Error en la verificación');
+        }
+    };
+
     return (
         <div className="signup-container">
-
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
-
                     <h1>Bienvenido</h1>
                     <GiColumnVase className='logoTipo'/>
                     <p>Nos alegra que seas parte de nosotros</p>
@@ -61,8 +67,8 @@ const Signup = () => {
                     <input
                         type="email"
                         id="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        value={correo}
+                        onChange={(e) => setCorreo(e.target.value)}
                         required
                     />
                 </div>

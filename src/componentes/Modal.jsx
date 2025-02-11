@@ -8,14 +8,14 @@ const Modal = ({ isOpen, onClose, onSubmit }) => {
     if (!isOpen) return null;
 
     const handleSubmit = async () => {
-        const usuario = JSON.parse(sessionStorage.getItem('usuario'));
+        const nombreUsuario = sessionStorage.getItem('nombreUsuario');
         const data = {
-            id: usuario.id,
-            codigo: codigo
+            usuario: nombreUsuario,
+            codigoActivacion: codigo
         };
 
         try {
-            const response = await axios.put('https://backend-vercel-lime.vercel.app/registrar/cliente/activar', data);
+            const response = await axios.put('https://back-artesanias-vue.vercel.app/Registrar/Cliente/Activar', data);
             console.log('Registro exitoso:', response.data);
             onSubmit(codigo);
             onClose();
