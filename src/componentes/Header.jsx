@@ -21,7 +21,7 @@ function Header() {
         <div className="header">
             <GiColumnVase className="logotipoTienda"/>
             <Link to={"/Home"}><Boton>Inicio</Boton></Link>
-            <Boton>Tiendas</Boton>
+            
             <Link to="/Catalogo"><Boton>Catálogo</Boton></Link>
             <Link to="/Login"><Boton>Ingresar</Boton></Link>
             <Link to="/Singup">
