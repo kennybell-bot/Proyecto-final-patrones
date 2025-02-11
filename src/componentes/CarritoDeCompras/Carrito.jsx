@@ -71,7 +71,7 @@ function Carrito() {
                 correo: usuario.correo
             },
             carrito: carrito,
-            success_url: "http://localhost:3000/Home",
+            success_url: "https://proyecto-final-patrones-git-master-kennybell-bots-projects.vercel.app/Home",
             cancel_url: "http://localhost:3000/Catalogo"
         };
 
