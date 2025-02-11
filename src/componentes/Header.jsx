@@ -23,7 +23,9 @@ function Header() {
             <Boton>Tiendas</Boton>
             <Link to="/Catalogo"><Boton>Catálogo</Boton></Link>
             <Link to="/Login"><Boton>Ingresar</Boton></Link>
-            <Boton>Registrarse</Boton>
+            <Link to="/Singup">
+                <Boton>Registrarse</Boton>
+            </Link>
             <Link to='/carrito'>
                 <Boton className="boton-carrito">
                     {counter !== 0 && <span>{counter}</span>}

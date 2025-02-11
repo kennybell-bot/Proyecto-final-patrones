@@ -5,7 +5,8 @@ import Header from './componentes/Header';
 import Body from './componentes/Dashboard/Body';
 import Login from './componentes/Login/Login';
 import Catalogo from './componentes/Catalogo/Catalogo';
-import Carrito from './componentes/CarritoDeCompras/Carrito'; 
+import Carrito from './componentes/CarritoDeCompras/Carrito';
+import Singup from './componentes/Singup'; 
 
 import AdministradorGeneral from './componentes/AdministradorGeneral/AdministradorGeneral';
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/catalogo" element={<Catalogo/>}/>
           <Route path="/administradorGeneral" element={<AdministradorGeneral/>}/>
           <Route path="/carrito" element={<Carrito/>}/>
+          <Route path='/singup' element={<Singup/>} />
           {/*
           <Route path="/admin/home" element={<AdminHome />} />
           <Route path="/client/home" element={<ClientHome />} />

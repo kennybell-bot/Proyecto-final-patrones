@@ -8,6 +8,7 @@ import { useState } from "react";
 function Login() {
     const [usuario, setUsuario] = useState('');
     const [contrasena, setContrasena] = useState('');
+    const [mensaje, setMensaje] = useState('');
     const navigate = useNavigate();
 
     const handleLogin = () => {
@@ -29,13 +30,15 @@ function Login() {
         axios.request(config)
         .then((response) => {
             const idusuario = response.data.idrol;
+            const nombreUsuario = response.data.nombre; // Suponiendo que el nombre del usuario viene en la respuesta
             if (idusuario) {
                 // Guarda los datos del usuario en sessionStorage
                 sessionStorage.setItem('usuario', JSON.stringify(response.data));
+                sessionStorage.setItem('nombreUsuario', usuario); // Guarda el nombre del usuario en sessionStorage
 
                 // Redirige a una página específica basada en el idusuario
                 if (idusuario === 3) {
-                    navigate('/administradorGeneral');
+                    window.location.href = 'https://angie-front-seven.vercel.app/';
                 } else if (idusuario === 1) {
                     navigate('/Catalogo');
                 } else {
@@ -44,11 +47,19 @@ function Login() {
             } else {
                 // Maneja el error de autenticación
                 console.log('Error de autenticación');
+                setMensaje('Error de autenticación');
             }
         })
         .catch((error) => {
             console.log(error);
+            setMensaje('Error en la solicitud');
         });
+    };
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            handleLogin();
+        }
     };
 
     return (
@@ -76,9 +87,11 @@ function Login() {
                         className="input" 
                         value={contrasena} 
                         onChange={(e) => setContrasena(e.target.value)} 
+                        onKeyDown={handleKeyDown} // Agregar manejador de eventos onKeyDown
                     />
                     <button onClick={handleLogin} className="botonLogin">Iniciar Sesión</button>
-                    <a href="https://angie-front-seven.vercel.app/store/home">¿Eres administrador?</a>
+                    <a href="https://angie-front-seven.vercel.app">¿Eres administrador?</a>
+                    <p>{mensaje}</p>
                 </div>
             </div>
         </div>
@@ -86,15 +99,3 @@ function Login() {
 }
 
 export default Login;
-
-/*
-Para recuperar los datos del usuario almacenados en sessionStorage, se puede utilizar el siguiente código:
-const [usuario, setUsuario] = useState(null);
-
-    useEffect(() => {
-        const usuarioData = sessionStorage.getItem('usuario');
-        if (usuarioData) {
-            setUsuario(JSON.parse(usuarioData));
-        }
-    }, []);
-*/
